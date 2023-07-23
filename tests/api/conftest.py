@@ -6,12 +6,12 @@ class User:
         self.second_name = None    
 
     def create(self):
-        self.name = 'Sergii'
-        self.second_name = 'Butenko'
+        self.name = 'Daria'
+        self.second_name = 'Kozak'
     
     def remove(self):
-        self.name = ' '
-        self.second_name = ' '
+        self.name = ''
+        self.second_name = ''
         
 
 
