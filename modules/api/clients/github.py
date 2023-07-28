@@ -1,3 +1,4 @@
+#all requests for GIT which we will use for testing
 import requests
 
 class GitHub:
@@ -8,6 +9,3 @@ class GitHub:
          
          return body
      
-'''api = GitHub()
-user = api.get_user_defunkt()
-print(user)'''
