@@ -7,3 +7,7 @@ class GitHub:
          body = r.json()
          
          return body
+     
+'''api = GitHub()
+user = api.get_user_defunkt()
+print(user)'''

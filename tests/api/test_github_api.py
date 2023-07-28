@@ -1,12 +1,13 @@
+from modules.api.clients.github import GitHub
+
 import pytest
 
-from modules.api.clients.github import GitHub
-#why not slash if it is address??
+#point instead of a slash - a way to indicate path in Python 
+
 @pytest.mark.api
 def test_user_exists():
-    api = GitHub()
-    user = api.get_user_defunkt() #for example here we use dot notation for passing instance
-    #api to function(or method) get_user_defunkt, right???
-    assert user['login'] == 'defunk'
+    api = GitHub() #instance of GitHub
+    user = api.get_user_defunkt()  # pass the instance to function get_user_defunk() which will return th body of response
+    assert user['login'] == 'defunk' #compare that login in body equals to 'defunk'
     
 #this will be invoked by $pytest -m api
