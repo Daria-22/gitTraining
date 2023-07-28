@@ -1,19 +1,19 @@
 #test which will send HTTP request to git hub site
 
-import pytest #pytest will do the job
-import requests #request is the module for sending requests 
+import pytest         #pytest will do the job
+import requests       #request is the module for sending requests 
 
-@pytest.mark.http  #this mark should be added to pytest.ini
+@pytest.mark.http     # mark should be added to pytest.ini
 def test_first_request():
     r= requests.get('https://api.github.com/zen') #sending request to get response from address and saving ti "r"
     # printing data saved as r as text, text is attribute of variable r
     print(f'Printing response from https://api.github.com/zen: {r.text}') 
-# the command to give ot pytest: pytest -m http -s (whatever it means)
-# by the way -s means analogue for print() in the python code
+# the command to give ot pytest: pytest -m http -s 
+# -s means analogue for print() in the python code
 
 @pytest.mark.http
 def test_second_request():
-    #sending request to get response from api.github.com/users/defunkt and saving it as r
+    # request to get response from api.github.com/users/defunkt and saving it as r
     r =requests.get('https://api.github.com/users/defunkt')
     #print(f'Response is {r.text}')
     #print(f'Response body is {r.json()}')
@@ -22,7 +22,7 @@ def test_second_request():
     #print(f'Body is {body}')
     
 
-    assert body['name']== 'Chris Wanstrath' #body is a dictionary, we get access to value via key and check if it is Chris Wanstrath
+    assert body['name']== 'Chris Wanstrath' #body is a dictionary, we get access to value via key and check it == Chris Wanstrath
     assert r.status_code == 200 # status_code if a property, we get access to it with dot notation and check that is it 200
     
     headers = r.headers #headers is a property of r, getting access to it via dot notation
