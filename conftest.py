@@ -30,6 +30,6 @@ def user():
     
 @pytest.fixture   
 def github_api():
-    api = GitHub()
-    yield api
+    api = GitHub() #creates an instance of GitHub - body of request to the searched link
+    yield api  #return on the created instance to tests under name github_api
      
