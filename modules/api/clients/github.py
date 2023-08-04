@@ -33,7 +33,18 @@ class GitHub:
                 count +=1
         return count
                     
-           
+    def invalidcommit_time_gets_commitnotfound(self):
+        commit_get =requests.get("https://api.github.com/repos/Daria-22/gitTraining/commits/since 2025-01-0208:09:06")
+        response = commit_get.json()
+        print(response)
+        assert 'No commit found for SHA:since 2025-01-0208:09:06'
+        print ('Invalid time commit is not found - pass')       
     
-    
+    def valid_time_commit_is_found(self):
+        commit_get =requests.get("https://api.github.com/repos/Daria-22/gitTraining/commits/since 2023-06-0200:00:00")
+        response = commit_get.json()
+        print(response)
+        check_truthfulness = 'No commit found for SHA:since 2023-06-0200:00:00' in response
+        assert check_truthfulness == False
+        print ('Valid time commit is found - pass') 
     
