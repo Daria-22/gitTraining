@@ -32,4 +32,5 @@ def user():
 def github_api():
     api = GitHub() #creates an instance of GitHub - body of request to the searched link
     yield api  #return on the created instance to tests under name github_api
+
      
