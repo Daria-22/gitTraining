@@ -28,9 +28,10 @@ class SignInPageRE(BasePageRE):
         
     #method to get elements from canvas
     def get_canvas_elements(self):
-        self.login_field = self.driver.find_element(By.NAME, "username")
-        self.pswd_field = self.driver.find_element(By.NAME, "password")
+        self.login_field = self.driver.find_element(By.CLASS, "container") #doesn't work 
+        #self.pswd_field = self.driver.find_element(By.NAME, "password") #doesn't work
     
+
     #method for finding the password box
     
     #method for filling in the login box
@@ -40,24 +41,5 @@ class SignInPageRE(BasePageRE):
     #method for confirming the input of login and password
     
         
-    
-    #By.XPATH /html/body/div[1]/div/div[1]/div[1]/div/div[1]/div/h1        
-    
-    #input wrong name or wrong email
-    #    login_elem.send_keys(username)
-        
-        #find field to which the wrong password will be input
-        #pass_elem = self.driver.find_element(By.role, "password")
-        
-        #input the wrong password
-        #pass_elem.send_keys(password)
-        
-        #find button sign in
-        #btn_elem = self.driver.find_element(By.XPATH, "commit")
-        
-        #emulation of left button click
-        #btn_elem.click()
-        
-    #def check_title(self,expected_title):
-    #    return self.driver.title == expected_title
-        
+   
+    #return self.driver.title == expected_title

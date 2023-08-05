@@ -16,9 +16,10 @@ def test_the_button_for_login_is_found():
     link= sign_in_pageRE.find_and_click_login_button() 
     time.sleep(10)
     
-#@pytest.mark.ui_mine
+@pytest.mark.ui_mine
 def test_correct_login_wrong_pswd():
-    SignInPageRE.get_canvas_elements()
+    sign_in_pageRE = SignInPageRE()
+    sign_in_pageRE.get_canvas_elements()
     print("The password and login boxes test is over")
 
 
