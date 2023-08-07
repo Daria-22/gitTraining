@@ -16,21 +16,46 @@ class SignInPageRE(BasePageRE):
         self.driver.get(SignInPageRE.URL)
         
        
-    #method for fiding the button "Log in"   and clicking it
+    #method for fiding the button "Log in"   and clicking it -works
     def find_and_click_login_button (self):
         login_button = self.driver.find_element(By.XPATH, "//a[@href='https://app.readingeggs.com/login']")
         login_button.click()
         
        
-    #method for finding the login box
-    def find_password_element(self):
+    #method for opening the login page 
+    def open_login_page(self):
         self.driver.get("https://app.readingeggs.com/login")
         
-    #method to get elements from canvas
-    def get_canvas_elements(self):
-        self.login_field = self.driver.find_element(By.CLASS, "container") #doesn't work 
+    #method to get login element from the page 
+    def get_login_element(self):
+        self.login_field = self.driver.find_element(By.ID, "username") # works, my mistake - not makign the test complately independent
+        
+   #method to get password element from the page
+    def get_password_element(self):
+        self.password_field = self.driver.find_element(By.ID,"password") #worked
+       
+    
+       
+        #self.driver.password_elem.sendKeys("ClassesObjectsMay2023")
+    
+    
+    #method for typing correct form of password student
+    
+    
+    #method for typing orrect from of password teacher
+    
+       
+       
+       
+       
+       
+       
+       
+       
+       
         #self.pswd_field = self.driver.find_element(By.NAME, "password") #doesn't work
     
+#name="username" id="username" 
 
     #method for finding the password box
     

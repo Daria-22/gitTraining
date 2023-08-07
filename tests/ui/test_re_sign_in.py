@@ -3,6 +3,7 @@ import time
 from selenium.webdriver.common.action_chains import ActionChains
 import pytest
 
+#test1 - finds Login button and clicks it
 @pytest.mark.ui_mine
 def test_the_button_for_login_is_found():
     #create an instance of page
@@ -15,16 +16,23 @@ def test_the_button_for_login_is_found():
     #find the button, click the login button:
     link= sign_in_pageRE.find_and_click_login_button() 
     time.sleep(10)
-    
+    print("Test 1 is completed")
+ 
+#test 2 - try login with correct credentials   
 @pytest.mark.ui_mine
-def test_correct_login_wrong_pswd():
+def test_correct_login_correct_pswd():
     sign_in_pageRE = SignInPageRE()
-    sign_in_pageRE.get_canvas_elements()
-    print("The password and login boxes test is over")
+    sign_in_pageRE.open_login_page()
+    login_elem = sign_in_pageRE.get_login_element() #trying to find box for login
+    password_elem = sign_in_pageRE.get_password_element() #trying to find box for password
+    login_elem.sendKeys("daria.kozak@mailinator.com")
+    password_elem.sendKeys("ClassesObjectsMay2023")
+    
+    print("Test 2 is completed")
 
 
 #def test_correct_login():
-#    SignInPageRE.find_password_element()
+    #SignInPageRE.get_login_elements()
     
     #input wrong login and correct password
     
