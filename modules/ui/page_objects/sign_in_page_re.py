@@ -28,16 +28,16 @@ class SignInPageRE(BasePageRE):
         
     #method to get login element from the page 
     def get_login_element(self):
-        self.login_field = self.driver.find_element(By.ID, "username") # works, my mistake - not makign the test complately independent
-        
+        login_field = self.driver.find_element(By.ID, "username") # works, my mistake - not makign the test complately independent
+        return login_field
+    
    #method to get password element from the page
     def get_password_element(self):
-        self.password_field = self.driver.find_element(By.ID,"password") #worked
+        password_field = self.driver.find_element(By.ID,"password") #worked
+        return password_field
        
     
-       
-        #self.driver.password_elem.sendKeys("ClassesObjectsMay2023")
-    
+      
     
     #method for typing correct form of password student
     

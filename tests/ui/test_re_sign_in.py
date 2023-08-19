@@ -23,10 +23,11 @@ def test_the_button_for_login_is_found():
 def test_correct_login_correct_pswd():
     sign_in_pageRE = SignInPageRE()
     sign_in_pageRE.open_login_page()
-    login_elem = sign_in_pageRE.get_login_element() #trying to find box for login
-    password_elem = sign_in_pageRE.get_password_element() #trying to find box for password
-    login_elem.sendKeys("daria.kozak@mailinator.com")
-    password_elem.sendKeys("ClassesObjectsMay2023")
+    l = sign_in_pageRE.get_login_element()#trying to find box for login
+    p = sign_in_pageRE.get_password_element() #trying to find box for password
+    #How do I know that l and p went correctly and the command was successful? 
+    l.send_keys('daria.kozak@mailinator.com') 
+    p.send_keys('ClassesObjectsMay2023')
     
     print("Test 2 is completed")
 
